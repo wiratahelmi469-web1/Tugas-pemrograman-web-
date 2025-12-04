@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Muslimah Fashion Store — Toko Online</title>
+  <meta name="description" content="Toko fashion muslimah modern — gamis, hijab, outer, dan aksesoris." />
+  <!-- Tailwind CDN for quick styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Simple custom styles */
+    .line-clamp-2 {display: -webkit-box; -webkit-line-clamp:2; -webkit-box-orient: vertical; overflow: hidden}
+    /* subtle card hover */
+    .card:hover { transform: translateY(-6px); box-shadow: 0 12px 24px rgba(0,0,0,0.08) }
+    .transition-fast { transition: all .18s ease-in-out }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+  <!-- Topbar -->
+  <header class="bg-white shadow-sm sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-4">
+          <a href="#" class="text-xl font-extrabold text-rose-600">Muslimah<span class="text-gray-600">Store</span></a>
+          <nav class="hidden md:flex gap-2 text-sm text-gray-600">
+            <a href="#" class="px-3 py-2 rounded-md hover:bg-gray-100">Beranda</a>
+            <a href="#products" class="px-3 py-2 rounded-md hover:bg-gray-100">Produk</a>
+            <a href="#about" class="px-3 py-2 rounded-md hover:bg-gray-100">Tentang</a>
+            <a href="#contact" class="px-3 py-2 rounded-md hover:bg-gray-100">Kontak</a>
+          </nav>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="hidden sm:flex items-center bg-gray-100 rounded-lg px-3 py-1 gap-2">
+            <input id="searchInput" type="text" placeholder="Cari: gamis, hijab, set..." class="bg-transparent outline-none text-sm w-48" />
+            <button id="searchBtn" class="text-sm">Cari</button>
+          </div>
+
+          <button id="wishlistBtn" class="hidden sm:inline-block px-3 py-2 rounded-md">♡ Wishlist</button>
+
+          <button id="cartToggle" class="relative inline-flex items-center px-3 py-2 bg-rose-500 text-white rounded-md transition-fast">
+            🛒 <span id="cartCount" class="ml-2 text-sm font-semibold">0</span>
+          </button>
+
+          <button id="menuBtn" class="md:hidden p-2">☰</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="bg-gradient-to-r from-rose-50 to-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">Muslimah Fashion<br class="hidden sm:block">— Anggun, Modest, & Nyaman</h1>
+          <p class="mt-4 text-lg text-gray-600">Koleksi gamis, hijab, outer dan set yang didesain khusus untuk muslimah modern. Gratis ongkir untuk pembelian tertentu.</p>
+          <div class="mt-6 flex gap-3">
+            <a href="#products" class="inline-block bg-rose-600 text-white px-5 py-3 rounded-md font-semibold">Belanja Sekarang</a>
+            <a href="#about" class="inline-block border border-rose-600 text-rose-600 px-5 py-3 rounded-md">Pelajari Lebih</a>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=60" alt="Muslimah fashion" class="w-full max-w-md rounded-2xl shadow-lg" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <h2 class="text-2xl font-bold mb-4">Kategori Populer</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="#products" data-cat="gamis" class="bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-fast">
+          <img src="https://images.unsplash.com/photo-1520975901528-4f4b6a5bfedc?auto=format&fit=crop&w=600&q=60" alt="Gamis" class="h-28 w-full object-cover rounded-md mb-2" />
+          <div class="font-semibold">Gamis</div>
+        </a>
+        <a href="#products" data-cat="hijab" class="bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-fast">
+          <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=600&q=60" alt="Hijab" class="h-28 w-full object-cover rounded-md mb-2" />
+          <div class="font-semibold">Hijab</div>
+        </a>
+        <a href="#products" data-cat="outer" class="bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-fast">
+          <img src="https://images.unsplash.com/photo-1520975698515-7b6e1f4b7f4e?auto=format&fit=crop&w=600&q=60" alt="Outer" class="h-28 w-full object-cover rounded-md mb-2" />
+          <div class="font-semibold">Outer</div>
+        </a>
+        <a href="#products" data-cat="aksesoris" class="bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition-fast">
+          <img src="https://images.unsplash.com/photo-1520975946371-26d487efb3f6?auto=format&fit=crop&w=600&q=60" alt="Aksesoris" class="h-28 w-full object-cover rounded-md mb-2" />
+          <div class="font-semibold">Aksesoris</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold">Semua Produk</h2>
+        <div class="flex items-center gap-2">
+          <label class="text-sm text-gray-600">Urutkan:</label>
+          <select id="sortSelect" class="border rounded-md px-2 py-1 text-sm">
+            <option value="popular">Populer</option>
+            <option value="new">Terbaru</option>
+            <option value="price_asc">Harga: Rendah &rarr; Tinggi</option>
+            <option value="price_desc">Harga: Tinggi &rarr; Rendah</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Product cards inserted by JS -->
+      </div>
+
+      <!-- load more (demo) -->
+      <div class="mt-8 text-center">
+        <button id="loadMore" class="px-5 py-2 border rounded-md">Muat Lebih</button>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="bg-white rounded-2xl p-6 shadow-sm">
+        <h3 class="text-xl font-bold">Tentang Muslimah Store</h3>
+        <p class="mt-3 text-gray-600">Kami menyediakan busana muslimah berkualitas dengan desain elegan, bahan nyaman, dan harga terjangkau. Fokus kami adalah membuat setiap muslimah merasa percaya diri dan nyaman.</p>
+      </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <footer id="contact" class="bg-white mt-8 border-t">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <h4 class="font-bold text-lg">Muslimah Store</h4>
+          <p class="text-sm text-gray-600 mt-2">Ikuti kami di Instagram untuk koleksi terbaru dan promo.</p>
+        </div>
+        <div>
+          <h5 class="font-semibold">Bantuan</h5>
+          <ul class="mt-2 text-sm text-gray-600">
+            <li>Pengiriman & Pengembalian</li>
+            <li>Pusat Bantuan</li>
+            <li>Ketentuan Layanan</li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-semibold">Kontak</h5>
+          <p class="mt-2 text-sm text-gray-600">email: support@muslimahstore.example</p>
+          <p class="text-sm text-gray-600">telp: +62 812 3456 7890</p>
+        </div>
+      </div>
+      <div class="bg-gray-50 py-4 text-center text-sm text-gray-500">© <span id="year">2025</span> Muslimah Store — All rights reserved.</div>
+    </footer>
+  </main>
+
+  <!-- Cart Sidebar -->
+  <aside id="cartSidebar" class="fixed right-0 top-0 h-full w-96 bg-white shadow-xl transform translate-x-full transition-transform z-40">
+    <div class="p-6 flex flex-col h-full">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-bold">Keranjang</h3>
+        <button id="closeCart" class="text-gray-500">✕</button>
+      </div>
+      <div id="cartItems" class="mt-4 overflow-auto flex-1">
+        <p class="text-sm text-gray-500">Keranjang kosong.</p>
+      </div>
+      <div class="mt-4">
+        <div class="flex items-center justify-between text-lg font-semibold"><span>Total</span><span id="cartTotal">Rp0</span></div>
+        <button id="checkoutBtn" class="mt-4 w-full bg-rose-600 text-white py-3 rounded-md">Checkout</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Product Modal -->
+  <div id="productModal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-lg max-w-3xl w-full p-6">
+      <button id="closeModal" class="ml-auto text-gray-500">✕</button>
+      <div id="modalContent" class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2"></div>
+    </div>
+  </div>
+
+  <!-- Templates and JS -->
+  <script>
+    // Demo product data (replace with API calls in production)
+    const products = [
+      {id:1, title:'Gamis Putri - Velvet', price:189000, img:'https://images.unsplash.com/photo-1576675787160-7f8c2c7b2b6b?auto=format&fit=crop&w=600&q=60', category:'gamis', desc:'Gamis bahan velvet lembut, potongan A-line, variasi warna.'},
+      {id:2, title:'Set Hijab Syar\'i', price:129000, img:'https://images.unsplash.com/photo-1549377887-2b9a1f7da0f7?auto=format&fit=crop&w=600&q=60', category:'hijab', desc:'Set hijab segi empat + ciput instan, nyaman dipakai seharian.'},
+      {id:3, title:'Outer Long Cardigan', price:159000, img:'https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=600&q=60', category:'outer', desc:'Outer panjang dengan bahan rajut ringan.'},
+      {id:4, title:'Aksesoris Bros Mutiara', price:45000, img:'https://images.unsplash.com/photo-1556228720-6bbf42e0f7a6?auto=format&fit=crop&w=600&q=60', category:'aksesoris', desc:'Bros mutiara untuk mempercantik hijab Anda.'},
+      // duplicate more items for demo
+      {id:5, title:'Gamis Mawar - Katun', price:139000, img:'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=600&q=60', category:'gamis', desc:'Gamis katun premium, motif bunga.'},
+      {id:6, title:'Pashmina Crepe', price:65000, img:'https://images.unsplash.com/photo-1520975698515-7b6e1f4b7f4e?auto=format&fit=crop&w=600&q=60', category:'hijab', desc:'Pashmina crepe lembut, tidak menerawang.'}
+    ];
+
+    // Simple cart implementation
+    let cart = {};
+
+    function formatRupiah(n){ return 'Rp' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+
+    function renderProducts(list){
+      const grid = document.getElementById('productGrid'); grid.innerHTML='';
+      list.forEach(p=>{
+        const card = document.createElement('article');
+        card.className='card bg-white rounded-lg p-4 shadow-sm transition-fast';
+        card.innerHTML = `
+          <img src="${p.img}" alt="${p.title}" class="w-full h-56 object-cover rounded-md mb-3">
+          <div class="flex justify-between items-start gap-2">
+            <div>
+              <h4 class="font-semibold">${p.title}</h4>
+              <p class="text-sm text-gray-500 line-clamp-2">${p.desc}</p>
+            </div>
+            <div class="text-right">
+              <div class="font-bold mt-1">${formatRupiah(p.price)}</div>
+              <button data-id="${p.id}" class="addToCart mt-2 inline-block text-sm px-3 py-1 border rounded-md">Tambah</button>
+              <button data-id="${p.id}" class="viewBtn mt-2 inline-block text-sm px-3 py-1 ml-1 rounded-md">Lihat</button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      })
+      attachProductButtons();
+    }
+
+    function attachProductButtons(){
+      document.querySelectorAll('.addToCart').forEach(btn=>{
+        btn.onclick = ()=>{ addToCart(parseInt(btn.dataset.id)); }
+      });
+      document.querySelectorAll('.viewBtn').forEach(btn=>{
+        btn.onclick = ()=>{ openModal(parseInt(btn.dataset.id)); }
+      });
+    }
+
+    function addToCart(id){
+      const p = products.find(x=>x.id===id);
+      if(!cart[id]) cart[id] = {...p, qty:0};
+      cart[id].qty++;
+      updateCartUI();
+    }
+
+    function updateCartUI(){
+      const cartItems = document.getElementById('cartItems');
+      cartItems.innerHTML='';
+      const keys = Object.keys(cart);
+      if(keys.length===0){ cartItems.innerHTML='<p class="text-sm text-gray-500">Keranjang kosong.</p>'; document.getElementById('cartCount').innerText='0'; document.getElementById('cartTotal').innerText='Rp0'; return; }
+      let total=0; document.getElementById('cartCount').innerText = keys.reduce((s,k)=>s+cart[k].qty,0);
+      keys.forEach(k=>{
+        const it = cart[k]; total += it.price * it.qty;
+        const div = document.createElement('div'); div.className='flex items-center gap-3 py-3 border-b';
+        div.innerHTML = `
+          <img src="${it.img}" alt="${it.title}" class="w-16 h-16 object-cover rounded-md">
+          <div class="flex-1">
+            <div class="font-semibold text-sm">${it.title}</div>
+            <div class="text-sm text-gray-500">${formatRupiah(it.price)} x ${it.qty}</div>
+          </div>
+          <div class="text-right">
+            <button data-id="${k}" class="increase text-sm px-2 py-1">+</button>
+            <button data-id="${k}" class="decrease text-sm px-2 py-1">-</button>
+          </div>
+        `;
+        cartItems.appendChild(div);
+      });
+      document.getElementById('cartTotal').innerText = formatRupiah(total);
+      // attach inc/dec
+      document.querySelectorAll('.increase').forEach(b=>b.onclick=()=>{ cart[b.dataset.id].qty++; updateCartUI(); });
+      document.querySelectorAll('.decrease').forEach(b=>b.onclick=()=>{ const id=b.dataset.id; cart[id].qty--; if(cart[id].qty<=0) delete cart[id]; updateCartUI(); });
+    }
+
+    // Modal
+    function openModal(id){
+      const p = products.find(x=>x.id===id);
+      const content = document.getElementById('modalContent');
+      content.innerHTML = `
+        <div>
+          <img src="${p.img}" alt="${p.title}" class="w-full h-80 object-cover rounded-md">
+        </div>
+        <div>
+          <h3 class="text-xl font-bold">${p.title}</h3>
+          <p class="mt-2 text-gray-600">${p.desc}</p>
+          <div class="mt-4 text-2xl font-bold">${formatRupiah(p.price)}</div>
+          <div class="mt-4 flex gap-2">
+            <button onclick="addToCart(${p.id})" class="px-4 py-2 bg-rose-600 text-white rounded-md">Tambah ke Keranjang</button>
+            <button onclick="document.getElementById('productModal').classList.add('hidden')" class="px-4 py-2 border rounded-md">Tutup</button>
+          </div>
+        </div>
+      `;
+      document.getElementById('productModal').classList.remove('hidden');
+      document.getElementById('productModal').classList.add('flex');
+    }
+
+    // Cart toggle
+    document.getElementById('cartToggle').addEventListener('click', ()=>{
+      document.getElementById('cartSidebar').classList.toggle('translate-x-full');
+    });
+    document.getElementById('closeCart').addEventListener('click', ()=>{
+      document.getElementById('cartSidebar').classList.add('translate-x-full');
+    });
+
+    // Modal close
+    document.getElementById('closeModal').addEventListener('click', ()=>{
+      document.getElementById('productModal').classList.add('hidden');
+    });
+
+    // Search
+    document.getElementById('searchBtn').addEventListener('click', ()=>{
+      const q = document.getElementById('searchInput').value.trim().toLowerCase();
+      const filtered = products.filter(p=> p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q));
+      renderProducts(filtered.length?filtered:products);
+    });
+
+    // Category quick filter (delegated)
+    document.querySelectorAll('[data-cat]').forEach(el=>{
+      el.addEventListener('click', (e)=>{
+        const cat = el.dataset.cat; const filtered = products.filter(p=>p.category===cat);
+        renderProducts(filtered);
+      });
+    });
+
+    // Sort
+    document.getElementById('sortSelect').addEventListener('change', ()=>{
+      const v = document.getElementById('sortSelect').value;
+      let sorted = [...products];
+      if(v==='price_asc') sorted.sort((a,b)=>a.price-b.price);
+      if(v==='price_desc') sorted.sort((a,b)=>b.price-a.price);
+      if(v==='new') sorted = sorted.reverse();
+      renderProducts(sorted);
+    });
+
+    // Load more (demo) simply duplicates items
+    document.getElementById('loadMore').addEventListener('click', ()=>{
+      const next = products.map(p=>({...p, id: p.id + Math.floor(Math.random()*1000)}));
+      products.push(...next);
+      renderProducts(products);
+    });
+
+    // initial render
+    renderProducts(products);
+
+    // small helpers
+    document.getElementById('year').innerText = new Date().getFullYear();
+
+  </script>
+</body>
+</html>
