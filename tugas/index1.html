@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Dinamis DOM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .biodata-card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        #fotoProfil {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+        .info {
+            flex-grow: 1;
+        }
+        .info p {
+            margin: 5px 0;
+        }
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Biodata Mahasiswa</h1>
+        
+        <div id="biodataCard" class="biodata-card">
+            <img id="fotoProfil" src="fotooo1.jpg">
+            <div class="info">
+                <p>Nama: <strong id="namaMhs">Nama Default</strong></p>
+                <p>NIM: <strong id="nimMhs">NIM Default</strong></p>
+                <p>Program Studi: <strong id="prodiMhs">Program Studi Default</strong></p>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button onclick="ubahNama()">Ubah Nama</button>
+            <button onclick="ubahProdi()">Ubah Program Studi</button>
+            <button onclick="gantiFoto()">Ganti Foto</button>
+            <button onclick="sembunyikanBiodata()">Sembunyikan Biodata</button>
+            <button onclick="tampilkanBiodata()">Tampilkan Biodata</button>
+        </div>
+    </div>
+
+    <script>
+
+        let currentName = "HELMI WIRATA";
+        let currentProdi = "Sistem Informasi";
+        const defaultPhotoUrl = "";
+        let newPhotoUrl = "";
+        let isDefaultPhoto = true;
+
+
+        function ubahNama() {
+           
+            currentName = prompt(" nama baru:", currentName);
+            if (currentName) {
+                document.getElementById('namaMhs').innerHTML = currentName
+            }       
+        }
+
+        function ubahProdi() {
+           
+            currentProdi = prompt("Masukkan program studi baru:", currentProdi);
+            if (currentProdi) {
+                document.getElementById('prodiMhs').innerHTML = currentProdi;
+            } 
+        }
+
+        function gantiFoto(){
+            if (isDefaultPhoto) {
+                newPhotoUrl = prompt("Masukkan URL foto baru:", newPhotoUrl);
+                if (newPhotoUrl) {
+                    document.getElementById('fotoProfil').setAttribute('src', newPhotoUrl);
+                    isDefaultPhoto = false;
+                }
+            } else {
+                document.getElementById('fotoProfil').setAttribute('src', defaultPhotoUrl);
+                isDefaultPhoto = true;
+            }
+        }
+
+        function sembunyikanBiodata() {
+            
+            document.getElementById('biodataCard').style.display = 'none';
+        }
+
+        function tampilkanBiodata() {
+
+            document.getElementById('biodataCard').style.display = 'flex';
+        }
+
+        
+        window.onload = function() {
+            document.getElementById('namaMhs').innerHTML = currentName;
+            document.getElementById('nimMhs').innerHTML = "220101001"; // NIM statis
+            document.getElementById('prodiMhs').innerHTML = currentProdi;
+            document.getElementById('fotoProfil').setAttribute('src', defaultPhotoUrl);
+        };
+    </script>
+
+</body>
+</html>
