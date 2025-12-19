@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontak Kami - MuslimahStore</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container position-relative">
+
+    <a class="navbar-brand fw-bold" href="index.html">
+      <span class="text-success">Muslimah</span>Store
+    </a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item px-2"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item px-2"><a class="nav-link" href="koleksi.html">Koleksi</a></li>
+        <li class="nav-item px-2"><a class="nav-link" href="best-seller.html">Best Seller</a></li>
+        <li class="nav-item px-2"><a class="nav-link" href="tentang-kami.html">Tentang Kami</a></li>
+        <li class="nav-item px-2">
+          <a class="nav-link active fw-semibold" href="kontak.html">Kontak</a>
+        </li>
+      </ul>
+    </div>
+
+    <button class="btn btn-outline-secondary ms-2" id="darkToggle">
+     <i class="bi bi-moon"></i>
+   </button>
+
+
+    <!-- CART -->
+    <a href="keranjang.html"
+       class="btn btn-outline-success position-relative">
+      <i class="bi bi-cart"></i>
+      <span id="cart-count"
+        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        0
+      </span>
+    </a>
+
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="contact-hero py-5">
+  <div class="container text-center">
+    <h1 class="fw-bold mb-3">Hubungi Kami</h1>
+    <p class="text-muted">
+      Kami siap membantu Anda dengan sepenuh hati
+    </p>
+  </div>
+</section>
+
+<!-- ================= KONTAK ================= -->
+<section class="py-5">
+  <div class="container">
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- WhatsApp -->
+      <div class="col-md-4">
+        <div class="contact-card text-center p-4 h-100 shadow-sm rounded bg-white">
+          <i class="bi bi-whatsapp text-success mb-3 fs-1"></i>
+          <h5 class="fw-semibold">WhatsApp</h5>
+          <p class="text-muted mb-3">
+            Respon cepat untuk pertanyaan & pemesanan
+          </p>
+          <a href="https://wa.me/6281234567890"
+             target="_blank"
+             class="btn btn-success">
+            Chat WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Instagram -->
+      <div class="col-md-4">
+        <div class="contact-card text-center p-4 h-100 shadow-sm rounded bg-white">
+          <i class="bi bi-instagram text-danger mb-3 fs-1"></i>
+          <h5 class="fw-semibold">Instagram</h5>
+          <p class="text-muted mb-3">
+            Update koleksi & promo terbaru
+          </p>
+          <a href="https://instagram.com/muslimahstore"
+             target="_blank"
+             class="btn btn-outline-danger">
+            Kunjungi Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="col-md-4">
+        <div class="contact-card text-center p-4 h-100 shadow-sm rounded bg-white">
+          <i class="bi bi-envelope-fill text-success mb-3 fs-1"></i>
+          <h5 class="fw-semibold">Email</h5>
+          <p class="text-muted mb-3">
+            Untuk kerja sama & pertanyaan resmi
+          </p>
+          <a href="mailto:cs@muslimahstore.com"
+             class="btn btn-outline-success">
+            Kirim Email
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-white py-4 text-center">
+  <p class="fw-semibold mb-1">MuslimahStore</p>
+  <p class="text-muted small mb-0">
+    © 2025 MuslimahStore. All rights reserved.
+  </p>
+</footer>
+
+<!-- ================= TOAST ================= -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 9999">
+  <div id="cartToast" class="toast align-items-center text-bg-success border-0" role="alert">
+    <div class="d-flex">
+      <div class="toast-body">
+        Produk berhasil ditambahkan ke keranjang
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast"></button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL GLOBAL ================= -->
+<div class="modal fade" id="globalModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle">Informasi</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        Konten modal
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ================= JS ================= -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+
+</body>
+</html>
