@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Class Registration Form</title>
+
+  <!-- Optional: Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #f4f6f8;
+      --card: #ffffff;
+      --muted: #9aa1a8;
+      --accent: #111827;
+      --primary: #111;
+      --shadow: 0 10px 30px rgba(16,24,40,0.08);
+      --radius: 10px;
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      background: linear-gradient(180deg, var(--bg), #fff);
+      color:var(--primary);
+    }
+
+    .page {
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:48px 16px;
+    }
+
+    .card {
+      width: 100%;
+      max-width:420px;
+      background: var(--card);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      padding:28px;
+      box-sizing:border-box;
+    }
+
+    h1.title {
+      margin:0 0 8px 0;
+      font-size:20px;
+      font-weight:700;
+      letter-spacing:0.2px;
+    }
+
+    p.lead {
+      margin:0 0 18px 0;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    form .row {
+      display:flex;
+      gap:12px;
+      margin-bottom:12px;
+    }
+
+    .field {
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      flex:1 1 0;
+    }
+
+    label {
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      padding:10px 12px;
+      border-radius:6px;
+      border:1px solid #e6e9ee;
+      background: #fff;
+      font-size:14px;
+      outline:none;
+      box-sizing:border-box;
+      transition:box-shadow .12s, border-color .12s;
+    }
+
+    input::placeholder { color:#c9ced4; }
+
+    input:focus, select:focus {
+      border-color:#cbd5e1;
+      box-shadow:0 0 0 4px rgba(99,102,241,0.06);
+    }
+
+    .select-wrap {
+      margin-bottom:14px;
+    }
+
+    .section-label {
+      margin:12px 0 8px 0;
+      font-weight:600;
+      font-size:13px;
+    }
+
+    .muted-small {
+      font-size:12px;
+      color:var(--muted);
+      margin-top:4px;
+    }
+
+    .checkbox-grid {
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:8px 10px;
+      margin:10px 0 8px 0;
+    }
+
+    .check {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:14px;
+      color:#333;
+    }
+
+    input[type="checkbox"] {
+      width:16px;
+      height:16px;
+      margin:0;
+    }
+
+    .agree {
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      margin:10px 0 16px 0;
+      font-size:13px;
+      color:#333;
+    }
+
+    .btn {
+      display:inline-block;
+      width:100%;
+      text-align:center;
+      padding:12px 14px;
+      border-radius:8px;
+      border:0;
+      cursor:pointer;
+      font-weight:700;
+      background:#000;
+      color:#fff;
+      box-shadow:0 6px 14px rgba(0,0,0,0.12);
+      transition:transform .08s ease;
+    }
+
+    .btn:active{ transform:translateY(1px); }
+
+    .footer-note{
+      text-align:center;
+      margin-top:12px;
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    
+    @media (max-width:420px){
+      .row{ flex-direction:column; }
+      .checkbox-grid{ grid-template-columns:repeat(1,1fr); }
+    }
+
+    
+    .card::before{
+      content:'';
+      position:absolute;
+      pointer-events:none;
+    }
+
+  
+    .result {
+      margin-top:12px;
+      padding:10px 12px;
+      border-radius:8px;
+      background:#f8fafc;
+      border:1px solid #e6eef7;
+      font-size:13px;
+      color:#0b1220;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="card" role="region" aria-label="Form pendaftaran kelas">
+      <h1 class="title">Class Registration Form</h1>
+      <p class="lead">Please fill out the form below to register for our class</p>
+
+      <form id="regForm" autocomplete="on" novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="firstName">First Name</label>
+            <input id="firstName" name="firstName" type="text" placeholder="First Name" required>
+          </div>
+
+          <div class="field">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" name="lastName" type="text" placeholder="Last Name" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" placeholder="Email Address" required>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="Phone Number" pattern="[0-9+\-\s()]{6,}" required>
+          </div>
+        </div>
+
+        <div class="select-wrap">
+          <div class="section-label">Class Level</div>
+          <select id="level" name="level" required>
+            <option value="" disabled selected>Select your class level</option>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+          <div class="muted-small">Please choose the appropriate level for your experience</div>
+        </div>
+
+        <div>
+          <div class="section-label">Class Days</div>
+          <div class="muted-small">Please select the days you are available to attend class</div>
+
+          <div class="checkbox-grid" role="group" aria-label="Class days">
+            <label class="check"><input type="checkbox" name="days" value="monday"> Monday</label>
+            <label class="check"><input type="checkbox" name="days" value="tuesday"> Tuesday</label>
+            <label class="check"><input type="checkbox" name="days" value="wednesday"> Wednesday</label>
+            <label class="check"><input type="checkbox" name="days" value="thursday"> Thursday</label>
+            <label class="check"><input type="checkbox" name="days" value="friday"> Friday</label>
+            <label class="check"><input type="checkbox" name="days" value="saturday"> Saturday</label>
+          </div>
+        </div>
+
+        <label class="agree">
+          <input type="checkbox" id="agree" name="agree" required>
+          <span>I agree to the terms and conditions of the class registration</span>
+        </label>
+
+        <button type="submit" class="btn">Register Now!</button>
+
+        <div id="result" class="result" style="display:none;"></div>
+      </form>
+
+      <div class="footer-note">We will contact you after receiving your registration.</div>
+    </div>
+  </div>
+
+  <script>
+    
+    (function(){
+      const form = document.getElementById('regForm');
+      const result = document.getElementById('result');
+
+      function getCheckedValues(name){
+        return Array.from(form.querySelectorAll('input[name="'+name+'"]:checked')).map(i => i.value);
+      }
+
+      form.addEventListener('submit', function(ev){
+        ev.preventDefault();
+
+        if(!form.checkValidity()){
+          form.reportValidity();
+          return;
+        }
+
+        const data = {
+          firstName: form.firstName.value.trim(),
+          lastName: form.lastName.value.trim(),
+          email: form.email.value.trim(),
+          phone: form.phone.value.trim(),
+          level: form.level.value,
+          days: getCheckedValues('days'),
+          agree: form.agree.checked
+        };
+
+        result.style.display = 'block';
+        result.innerHTML = '<strong>Registration received</strong><br>' +
+          'Name: ' + (data.firstName + ' ' + data.lastName) + '<br>' +
+          'Email: ' + data.email + '<br>' +
+          'Phone: ' + data.phone + '<br>' +
+          'Level: ' + data.level + '<br>' +
+          'Days: ' + (data.days.length ? data.days.join(', ') : '—') + '<br>' +
+          '<em>Thank you! We will contact you soon.</em>';
+
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+
+    h2 {
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 14px;
+      color: #555;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      display: inline-block;
+      width: 48%;
+      vertical-align: top;
+    }
+
+    .form-group.full {
+      width: 100%;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .checkbox-group label {
+      font-weight: normal;
+    }
+
+    .form-group.checkbox label {
+      font-weight: normal;
+    }
+
+    h3 {
+      margin-top: 25px;
+      font-size: 16px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Responsive */
+    @media (max-width: 500px) {
+      .form-group {
+        width: 100%;
+      }
+
+      .container {
+        width: 90%;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form class="event-form">
+      <h2>Event Registration Form</h2>
+      <p>Please fill out the form below to register for the event.</p>
+
+      <div class="form-group">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" placeholder="John">
+      </div>
+
+      <div class="form-group">
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" placeholder="Doe">
+      </div>
+
+      <div class="form-group full">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="john.doe@example.com">
+      </div>
+
+      <div class="form-group full">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="+1 (555) 123-4567">
+      </div>
+
+      <div class="form-group">
+        <label for="country">Country</label>
+        <select id="country">
+          <option>Select Country</option>
+          <option>Indonesia</option>
+          <option>United States</option>
+          <option>Japan</option>
+          <option>Malaysia</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob">
+      </div>
+
+      <div class="form-group full">
+        <label>T-Shirt Size</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox"> Small</label>
+          <label><input type="checkbox"> Medium</label>
+          <label><input type="checkbox"> Large</label>
+          <label><input type="checkbox"> Extra Large</label>
+        </div>
+      </div>
+
+      <h3>Emergency Contact Information</h3>
+
+      <div class="form-group full">
+        <label for="emergency-name">Emergency Contact Name</label>
+        <input type="text" id="emergency-name" placeholder="Jane Smith">
+      </div>
+
+      <div class="form-group full">
+        <label for="emergency-phone">Emergency Contact Phone Number</label>
+        <input type="tel" id="emergency-phone" placeholder="+1 (555) 123-4567">
+      </div>
+
+      <div class="form-group full checkbox">
+        <label><input type="checkbox"> I agree to the terms and conditions of this event.</label>
+      </div>
+
+      <button type="submit" class="btn">Register Now</button>
+    </form>
+  </div>
+</body>
+</html>

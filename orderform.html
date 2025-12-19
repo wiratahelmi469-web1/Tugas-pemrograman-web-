@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .form-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    textarea {
+      height: 80px;
+    }
+    .checkbox-group, .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 5px;
+    }
+    .checkbox-group label,
+    .radio-group label {
+      font-weight: normal;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Order Form</h2>
+    <form>
+      <label>Name</label>
+      <input type="text" placeholder="John Doe">
+
+      <label>Email</label>
+      <input type="email" placeholder="john.doe@example.com">
+
+      <label>Phone</label>
+      <input type="tel" placeholder="+1 (555) 123-4567">
+
+      <h3>Order Details</h3>
+      <label>Product</label>
+      <select>
+        <option>Select a product</option>
+        <option>Shirt</option>
+        <option>Jacket</option>
+        <option>Pants</option>
+      </select>
+
+      <label>Quantity</label>
+      <input type="number" value="1" min="1">
+
+      <label>Size</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox"> Small</label>
+        <label><input type="checkbox"> Medium</label>
+        <label><input type="checkbox"> Large</label>
+        <label><input type="checkbox"> XL</label>
+      </div>
+
+      <label>Color</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox"> Red</label>
+        <label><input type="checkbox"> Green</label>
+        <label><input type="checkbox"> Blue</label>
+        <label><input type="checkbox"> Black</label>
+      </div>
+
+      <label>Additional Comments</label>
+      <textarea placeholder="Enter any additional comments or instructions"></textarea>
+
+      <h3>Payment Details</h3>
+      <label>Payment Method</label>
+      <select>
+        <option>Select a payment method</option>
+        <option>Credit Card</option>
+        <option>Bank Transfer</option>
+        <option>Cash on Delivery</option>
+      </select>
+
+      <div class="checkbox-group">
+        <label><input type="checkbox"> I accept the terms and conditions.</label>
+      </div>
+
+      <button type="submit">Submit Order</button>
+    </form>
+  </div>
+</body>
+</html>
