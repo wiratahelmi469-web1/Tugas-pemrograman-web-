@@ -269,6 +269,31 @@ function showToast() {
   new bootstrap.Toast(toastEl, { delay: 2000 }).show();
 }
 
+/* ======================================================
+   DARK MODE TOGGLE (GLOBAL)
+====================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("darkToggle");
+
+  // apply saved mode
+  if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark-mode");
+    toggle?.classList.add("active");
+  }
+
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+
+      const isDark = document.body.classList.contains("dark-mode");
+      localStorage.setItem("darkMode", isDark);
+
+      toggle.classList.toggle("active", isDark);
+    });
+  }
+});
+
+
 /* ================= INIT ================= */
 document.addEventListener("DOMContentLoaded", () => {
   renderProducts();      // ← INI KUNCI UTAMA

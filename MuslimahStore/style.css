@@ -70,22 +70,147 @@ a {
   min-height: 40px;
 }
 
-/* ================= DARK MODE ================= */
+.hero {
+  background: linear-gradient(135deg, #f8fdfb, #eef7f3);
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  max-width: 520px;
+}
+
+.hero-cta {
+  margin-top: 10px;
+}
+
+.hero-image {
+  max-height: 480px;
+  object-fit: cover;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+  }
+}
+
+/* ======================================================
+   DARK MODE GLOBAL
+====================================================== */
 body.dark-mode {
-  background-color: #121212;
-  color: #f1f1f1;
+  background-color: #0f172a; /* slate-900 */
+  color: #e5e7eb;           /* gray-200 */
 }
 
-body.dark-mode .navbar,
-body.dark-mode .card,
+/* ================= NAVBAR ================= */
+body.dark-mode .navbar {
+  background-color: #020617 !important; /* hampir hitam */
+  border-bottom: 1px solid #1e293b;
+}
+
+body.dark-mode .navbar .nav-link,
+body.dark-mode .navbar-brand {
+  color: #e5e7eb !important;
+}
+
+body.dark-mode .navbar .nav-link.active {
+  color: #22c55e !important;
+}
+
+/* ================= SECTION ================= */
+body.dark-mode section {
+  background-color: transparent;
+}
+
+/* ================= CARD ================= */
+body.dark-mode .card {
+  background-color: #020617;
+  color: #e5e7eb;
+  border: 1px solid #1e293b;
+  box-shadow: none;
+}
+
+/* ================= TEXT ================= */
+body.dark-mode .text-muted {
+  color: #9ca3af !important;
+}
+
+/* ================= BUTTON ================= */
+body.dark-mode .btn-outline-success {
+  color: #22c55e;
+  border-color: #22c55e;
+}
+
+body.dark-mode .btn-outline-success:hover {
+  background-color: #22c55e;
+  color: #020617;
+}
+
+body.dark-mode .btn-success {
+  background-color: #22c55e;
+  border-color: #22c55e;
+  color: #020617;
+}
+
+/* ================= FORM ================= */
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+  background-color: #020617;
+  color: #e5e7eb;
+  border: 1px solid #1e293b;
+}
+
+body.dark-mode .form-control::placeholder {
+  color: #9ca3af;
+}
+
+/* ================= LIST GROUP ================= */
+body.dark-mode .list-group-item {
+  background-color: #020617;
+  color: #e5e7eb;
+  border-color: #1e293b;
+}
+
+/* ================= FOOTER ================= */
 body.dark-mode footer {
-  background-color: #1e1e1e !important;
-  color: #f1f1f1;
+  background-color: #020617;
+  color: #9ca3af;
+  border-top: 1px solid #1e293b;
 }
 
-body.dark-mode .nav-link {
-  color: #ddd;
+/* ================= HERO ================= */
+body.dark-mode .hero {
+  background: linear-gradient(135deg, #020617, #020617);
 }
+
+/* ================= MODAL ================= */
+body.dark-mode .modal-content {
+  background-color: #020617;
+  color: #e5e7eb;
+  border: 1px solid #1e293b;
+}
+
+/* ================= TOAST ================= */
+body.dark-mode .toast {
+  background-color: #020617;
+  color: #e5e7eb;
+}
+
 /* scrol reveral */
 .reveal {
   opacity: 0;
@@ -99,6 +224,31 @@ body.dark-mode .nav-link {
 }
 
 
+/* img */
+.card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.carousel-item img {
+  height: 600px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 350px;
+  }
+}
+
+.carousel-caption {
+  background: rgba(0,0,0,0.4);
+  padding: 20px;
+  border-radius: 10px;
+}
 
 /* =====================================================
    BUTTON
