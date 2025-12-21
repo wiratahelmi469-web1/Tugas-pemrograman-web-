@@ -317,3 +317,82 @@ footer {
     max-width: 90%;
   }
 }
+/* ================= GLOBAL ================= */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #212529;
+}
+
+/* ================= PRODUCT IMAGE ================= */
+.product-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ================= CARD ================= */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+/* ================= HERO IMAGE ================= */
+.hero-image {
+  max-height: 420px;
+  object-fit: cover;
+}
+
+/* ================= DARK MODE ================= */
+body.dark-mode {
+  background-color: #121212;
+  color: #eaeaea;
+}
+
+body.dark-mode .navbar,
+body.dark-mode .card,
+body.dark-mode footer {
+  background-color: #1e1e1e !important;
+  color: #eaeaea;
+}
+
+body.dark-mode .text-muted {
+  color: #b5b5b5 !important;
+}
+
+body.dark-mode .btn-outline-success {
+  color: #4ade80;
+  border-color: #4ade80;
+}
+
+body.dark-mode .btn-outline-success:hover {
+  background-color: #4ade80;
+  color: #121212;
+}
+
+body.dark-mode .modal-content {
+  background-color: #1e1e1e;
+  color: #eaeaea;
+}
+
+/* ================= CAROUSEL ================= */
+.carousel-item img {
+  height: 420px;
+  object-fit: cover;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 576px) {
+  .product-img {
+    height: 240px;
+  }
+
+  .carousel-item img {
+    height: 260px;
+  }
+}
