@@ -250,6 +250,27 @@ body.dark-mode .toast {
   border-radius: 10px;
 }
 
+.navbar .btn {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+}
+
+
 /* =====================================================
    BUTTON
 ===================================================== */
