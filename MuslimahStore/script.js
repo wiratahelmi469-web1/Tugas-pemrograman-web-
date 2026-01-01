@@ -293,6 +293,62 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+/* ================= LOGIN STATE ================= */
+function getUser() {
+  return JSON.parse(localStorage.getItem("user"));
+}
+
+/* ================= DASHBOARD INIT ================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const user = getUser();
+  const userName = document.getElementById("userName");
+
+  if (!user) {
+    // Jika belum login, paksa ke login
+    if (window.location.pathname.includes("dashboard.html")) {
+      window.location.href = "login.html";
+    }
+    return;
+  }
+
+  if (userName) {
+    userName.innerText = "Halo, " + user.name;
+  }
+});
+
+/* ================= LOGOUT ================= */
+function logout() {
+  localStorage.removeItem("user");
+  window.location.href = "login.html";
+}
+
+/* ================= PROFILE ================= */
+function showProfile() {
+  const user = getUser();
+  alert(
+    `Nama: ${user.name}\nEmail: ${user.email}`
+  );
+}
+
+/* ================= PROTECT DASHBOARD ================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const welcome = document.getElementById("welcomeText");
+  if (!welcome) return;
+
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+
+  welcome.innerText = `Selamat datang, ${user.name}`;
+});
+
+/* ================= LOGOUT ================= */
+function logout() {
+  localStorage.removeItem("user");
+  window.location.href = "login.html";
+}
 
 /* ================= INIT ================= */
 document.addEventListener("DOMContentLoaded", () => {
