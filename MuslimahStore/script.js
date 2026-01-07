@@ -184,61 +184,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* ================= DATA PRODUK ================= */
-const products = [
-  // ===== GAMIS =====
-  { name: "Gamis Zahra", price: 299000, image: "https://via.placeholder.com/300x380?text=Gamis+Zahra" },
-  { name: "Gamis Aisyah", price: 329000, image: "https://via.placeholder.com/300x380?text=Gamis+Aisyah" },
-  { name: "Gamis Khadijah", price: 359000, image: "https://via.placeholder.com/300x380?text=Gamis+Khadijah" },
-  { name: "Gamis Safiya", price: 279000, image: "https://via.placeholder.com/300x380?text=Gamis+Safiya" },
-  { name: "Gamis Salma", price: 289000, image: "https://via.placeholder.com/300x380?text=Gamis+Salma" },
-  { name: "Gamis Hanna", price: 309000, image: "https://via.placeholder.com/300x380?text=Gamis+Hanna" },
-  { name: "Gamis Naila", price: 319000, image: "https://via.placeholder.com/300x380?text=Gamis+Naila" },
-  { name: "Gamis Alya", price: 269000, image: "https://via.placeholder.com/300x380?text=Gamis+Alya" },
-  { name: "Gamis Rania", price: 339000, image: "https://via.placeholder.com/300x380?text=Gamis+Rania" },
-  { name: "Gamis Farah", price: 349000, image: "https://via.placeholder.com/300x380?text=Gamis+Farah" },
-
-  // ===== KOKO =====
-  { name: "Koko Al-Fatih", price: 249000, image: "https://via.placeholder.com/300x380?text=Koko+Al-Fatih" },
-  { name: "Koko Hasan", price: 269000, image: "https://via.placeholder.com/300x380?text=Koko+Hasan" },
-  { name: "Koko Umar", price: 229000, image: "https://via.placeholder.com/300x380?text=Koko+Umar" },
-  { name: "Koko Salman", price: 239000, image: "https://via.placeholder.com/300x380?text=Koko+Salman" },
-  { name: "Koko Bilal", price: 259000, image: "https://via.placeholder.com/300x380?text=Koko+Bilal" },
-  { name: "Koko Zaid", price: 279000, image: "https://via.placeholder.com/300x380?text=Koko+Zaid" },
-  { name: "Koko Hamzah", price: 289000, image: "https://via.placeholder.com/300x380?text=Koko+Hamzah" },
-  { name: "Koko Ali", price: 219000, image: "https://via.placeholder.com/300x380?text=Koko+Ali" },
-  { name: "Koko Yusuf", price: 299000, image: "https://via.placeholder.com/300x380?text=Koko+Yusuf" },
-  { name: "Koko Ibrahim", price: 309000, image: "https://via.placeholder.com/300x380?text=Koko+Ibrahim" }
-];
 
 
-/* ================= RENDER PRODUK ================= */
-function renderProducts() {
-  const container = document.getElementById("product-list");
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  products.forEach(p => {
-    container.innerHTML += `
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 shadow-sm border-0">
-          <img src="${p.image}" class="card-img-top" alt="${p.name}">
-          <div class="card-body text-center">
-            <h6 class="fw-semibold">${p.name}</h6>
-            <p class="fw-bold text-success">
-              Rp ${p.price.toLocaleString()}
-            </p>
-            <button class="btn btn-success btn-sm w-100"
-              onclick="addToCart('${p.name}', ${p.price})">
-              Tambah ke Keranjang
-            </button>
-          </div>
-        </div>
-      </div>
-    `;
-  });
-}
 
 /* ================= CART ================= */
 function getCart() {

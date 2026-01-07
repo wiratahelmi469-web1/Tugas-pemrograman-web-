@@ -223,6 +223,35 @@ body.dark-mode .toast {
   transform: translateY(0);
 }
 
+/* ICON BUTTON */
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+/* NAVBAR MOBILE */
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+
+  .navbar-collapse {
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px 0;
+  }
+}
+
 
 /* img */
 .card-img-top {
